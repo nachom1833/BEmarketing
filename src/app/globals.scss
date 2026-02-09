@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  /* Brand Colors */
+  --primary-heading: #1F2937;
+  --brand-core: #2C3E50;
+  --bg-light: #F5F5F5;
+  --cta-accent: #FF6F61;
+  --ui-subtle: #D1D5DB;
+  
+  /* Motion & Texture */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.8s var(--ease-out-expo);
+  --noise-texture: url('/assets/noise.png'); /* To act as a placeholder, I'll use a data URI or just comment out if not available yet */
+  
+  /* Spacing & Layout */
+  --container-padding: 2rem;
+  --section-padding: 8rem;
+  --border-radius-lg: 1.5rem;
+  --border-radius-md: 0.75rem;
+}
+
+/* Reset & Basics */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--brand-core);
+  overflow-x: hidden;
+  /* Lenis handles scrolling, so we don't need scroll-behavior: smooth on html */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Typography Utilities */
+.h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-size: clamp(3rem, 5vw + 1rem, 6rem);
+  color: var(--primary-heading);
+  line-height: 1.1;
+}
+
+.h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    font-size: clamp(2rem, 4vw + 1rem, 4rem);
+    color: var(--primary-heading);
+}
+
+.subtitle {
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--brand-core);
+}
+
+.p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Lenis Recommended Styles */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* Utility Classes */
+.fluid-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

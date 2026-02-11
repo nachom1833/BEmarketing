@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import styles from './MethodSection.module.scss';
 
 const steps = [
@@ -15,14 +15,32 @@ const steps = [
 ];
 
 export default function MethodSection() {
-    const targetRef = useRef(null);
+    const targetRef = useRef<HTMLDivElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const [scrollRange, setScrollRange] = useState(0);
+
     const { scrollYProgress } = useScroll({
         target: targetRef,
+        offset: ['start start', 'end end']
     });
 
-    // Map scroll progress to horizontal translation
-    // We want to scroll effectively -90% of width? Depends on content width.
-    const x = useTransform(scrollYProgress, [0, 1], ["0%", "-85%"]);
+    useEffect(() => {
+        // Calculate the distance needed to scroll
+        const updateScrollRange = () => {
+            if (containerRef.current) {
+                const totalWidth = containerRef.current.scrollWidth;
+                const viewportWidth = window.innerWidth;
+                const range = totalWidth - viewportWidth + 100; // +100 for padding/margin safety
+                setScrollRange(range > 0 ? range : 0);
+            }
+        };
+
+        updateScrollRange();
+        window.addEventListener('resize', updateScrollRange);
+        return () => window.removeEventListener('resize', updateScrollRange);
+    }, []);
+
+    const x = useTransform(scrollYProgress, [0, 1], ["0px", `-${scrollRange}px`]);
 
     return (
         <section ref={targetRef} className={styles.methodSection} id="method">
@@ -33,7 +51,7 @@ export default function MethodSection() {
                         <h2 className={styles.sectionTitle}>The BE Method™</h2>
                     </div>
 
-                    <motion.div style={{ x }} className={styles.stepsContainer}>
+                    <motion.div style={{ x }} ref={containerRef} className={styles.stepsContainer}>
                         {steps.map((step) => (
                             <div key={step.id} className={styles.stepCard}>
                                 <span className={styles.stepNumber}>{step.id}</span>

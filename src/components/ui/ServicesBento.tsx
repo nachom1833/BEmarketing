@@ -65,6 +65,7 @@ export default function ServicesBento() {
                                 src={service.image}
                                 alt={service.title}
                                 fill
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 className={styles.bgImage}
                             />
                             <div className={styles.overlay} />

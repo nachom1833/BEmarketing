@@ -1,11 +1,8 @@
 .methodSection {
     position: relative;
     height: 400vh;
-    /* make it tall enough to scroll through horizontally */
     background-color: #111;
-    /* Dark background */
     color: white;
-    /* Negative text */
 }
 
 .stickyContainer {
@@ -24,7 +21,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    /* Add subtle glassmorphism or texture here */
     background: radial-gradient(circle at 50% 50%, rgba(50, 50, 50, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%), var(--noise-texture);
     z-index: 1;
 }
@@ -36,41 +32,64 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
+    height: 100%;
+    /* Ensure it takes full height to center content */
 }
 
 .header {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     position: absolute;
-    top: 15vh;
+    top: 10vh;
     left: 0;
     z-index: 10;
+
+    @media (min-width: 768px) {
+        top: 15vh;
+        margin-bottom: 3rem;
+    }
 }
 
 .sectionTitle {
     font-family: 'Poppins', sans-serif;
-    font-size: 3rem;
+    font-size: 2rem;
+    /* Mobile */
     font-weight: 700;
     color: #fff;
     margin-bottom: 1rem;
+
+    @media (min-width: 768px) {
+        font-size: 3rem;
+    }
 }
 
 .stepsContainer {
     display: flex;
-    gap: 4vw;
-    margin-top: 10vh;
+    gap: 1rem;
+    /* Mobile Gap */
+    margin-top: 5vh;
     padding-left: 0;
-    /* Align with header initially */
     width: max-content;
-    /* Ensure container spans full width of children */
+
+    @media (min-width: 768px) {
+        gap: 2rem;
+        /* Tablet/Desktop Gap */
+        margin-top: 10vh;
+    }
+
+    @media (min-width: 1024px) {
+        gap: 4vw;
+        /* Large Desktop Gap */
+    }
 }
 
 .stepCard {
-    width: 40vw;
-    /* Wide cards */
-    max-width: 600px;
+    width: 85vw;
+    /* Mobile Width */
+    max-width: none;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
-    padding: 3rem;
+    padding: 2rem;
+    /* Smaller padding on mobile */
     border-radius: var(--border-radius-md);
     border: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
@@ -81,28 +100,54 @@
     &:hover {
         background: rgba(255, 255, 255, 0.1);
     }
+
+    @media (min-width: 768px) {
+        width: 60vw;
+        /* Tablet Width */
+        padding: 3rem;
+    }
+
+    @media (min-width: 1024px) {
+        width: 30vw;
+        /* Desktop Width */
+        max-width: 600px;
+    }
 }
 
 .stepNumber {
     font-family: 'Lato', sans-serif;
-    font-size: 4rem;
+    font-size: 2.5rem;
+    /* Mobile size */
     font-weight: 700;
     color: var(--cta-accent);
     opacity: 0.5;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     display: block;
+
+    @media (min-width: 768px) {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
 }
 
 .stepTitle {
     font-family: 'Poppins', sans-serif;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
     line-height: 1.1;
+
+    @media (min-width: 768px) {
+        font-size: 2.5rem;
+    }
 }
 
 .stepDesc {
     font-family: 'Lato', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
     opacity: 0.8;
+
+    @media (min-width: 768px) {
+        font-size: 1.1rem;
+    }
 }

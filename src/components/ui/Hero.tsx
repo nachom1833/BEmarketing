@@ -24,6 +24,7 @@ export default function Hero() {
                         src="https://images.unsplash.com/photo-1492551557933-34265f7af79e?q=80&w=2070&auto=format&fit=crop"
                         alt="Background"
                         fill
+                        sizes="100vw"
                         className={styles.bgImage}
                         priority
                     />

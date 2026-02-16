@@ -7,7 +7,7 @@ import PageTransition from '@/components/ui/PageTransition';
 
 const poppins = Poppins({
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
+  weight: ['400', '600', '700', '800'],
   variable: '--font-poppins',
   display: 'swap',
 });
@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning>
       <body className={`${poppins.variable} ${lato.variable}`} suppressHydrationWarning>
         <ScrollWrapper>
           <CustomCursor />

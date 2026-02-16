@@ -2,6 +2,8 @@
     padding: var(--section-padding) var(--container-padding);
     max-width: 1600px;
     margin: 0 auto;
+    position: relative;
+    z-index: 10;
 }
 
 .header {
@@ -10,6 +12,19 @@
 
     .h2 {
         margin-bottom: 1rem;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 3rem;
+        color: white;
+    }
+
+    .subtitle {
+        font-family: 'Lato', sans-serif;
+        color: #FF6F61;
+        font-size: 1.25rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
     }
 }
 
@@ -30,26 +45,27 @@
 
 .card {
     position: relative;
-    border-radius: var(--border-radius-md);
+    border-radius: 24px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 2rem;
+    padding: 2.5rem;
     color: white;
-    transition: transform 0.4s var(--ease-out-expo);
-    cursor: none;
-    /* Custom cursor handles it */
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    background: #111827;
+    /* Dark base color */
+    border: 1px solid rgba(255, 255, 255, 0.1);
 
+    /* Hover State handled by motion in JS for image, but container scale here */
     &:hover {
-        transform: scale(0.98);
-
-        .bgImage {
-            transform: scale(1.1);
-        }
+        transform: translateY(-5px);
+        border-color: rgba(255, 111, 97, 0.5);
+        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
 
         .iconArrow {
             transform: translateX(5px);
+            color: #FF6F61;
         }
     }
 }
@@ -69,19 +85,33 @@
 
 /* .medium and .small use default span 1 */
 
+
+/* Lens Effect Image Wrapper */
 .imageWrapper {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 0;
+    pointer-events: none;
+    background-color: #000;
+    /* Ensure dark background behind blend */
 }
 
 .bgImage {
     object-fit: cover;
-    transition: transform 0.6s var(--ease-out-expo);
+    mix-blend-mode: luminosity;
+    /* Start monotone/blended */
+    opacity: 0.6;
+    transition: all 0.6s ease;
 }
+
+/* On hover, the image becomes vibrant via variant, but we can help via CSS if needed. 
+   Actually, rely on Framer Motion 'active' state for the filter blur/brightness. 
+   But mix-blend-mode might need to change to 'normal' or 'overlay' on hover for color?
+   Let's stick to Framer Motion controlling the filter.
+*/
 
 .overlay {
     position: absolute;
@@ -89,33 +119,40 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%);
-    z-index: 2;
+    background: linear-gradient(to top,
+            rgba(17, 24, 39, 0.95) 0%,
+            rgba(17, 24, 39, 0.6) 40%,
+            rgba(17, 24, 39, 0.3) 100%);
+    z-index: 1;
+    pointer-events: none;
 }
 
 .content {
     position: relative;
-    z-index: 3;
+    z-index: 2;
 }
 
 .cardTitle {
     font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
+    font-weight: 700;
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+    color: white;
 }
 
 .cardDesc {
     font-family: 'Lato', sans-serif;
-    font-size: 0.9rem;
-    opacity: 0.9;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
     max-width: 90%;
+    line-height: 1.5;
 }
 
 .iconArrow {
     display: inline-block;
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    transition: transform 0.3s ease;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    color: rgba(255, 255, 255, 0.3);
 }

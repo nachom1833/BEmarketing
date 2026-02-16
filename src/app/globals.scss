@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;600;700;800&display=swap');
 
 :root {
   /* Brand Colors */
@@ -7,6 +7,11 @@
   --bg-light: #F5F5F5;
   --cta-accent: #FF6F61;
   --ui-subtle: #D1D5DB;
+
+  /* Deep Immersion Theme */
+  --deep-blue: #1F2937;
+  --aurora-blue: #2C3E50;
+  --aurora-coral: rgba(255, 111, 97, 0.3);
 
   /* Motion & Texture */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -57,12 +62,13 @@ img {
 /* Typography Utilities */
 .h1 {
   font-family: 'Poppins', sans-serif;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: -0.02em;
-  font-size: clamp(3rem, 5vw + 1rem, 6rem);
-  color: var(--primary-heading);
+  letter-spacing: -1px;
+  font-size: clamp(3rem, 5vw, 6rem);
+  color: #FFFFFF;
   line-height: 1.1;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .h2 {

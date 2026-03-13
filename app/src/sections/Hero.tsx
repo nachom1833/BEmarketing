@@ -22,33 +22,33 @@ interface MagneticButtonProps {
 
 const MagneticButton: React.FC<MagneticButtonProps> = ({ children, onClick, className = '' }) => {
   const ref = useRef<HTMLButtonElement>(null);
-  
+
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  
-  const springConfig = { stiffness: 150, damping: 15, mass: 0.1 };
+
+  const springConfig = { stiffness: 150, damping: 15, mass: 0.5 };
   const springX = useSpring(x, springConfig);
   const springY = useSpring(y, springConfig);
-  
+
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!ref.current) return;
-    
+
     const rect = ref.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
-    
+
     const distanceX = e.clientX - centerX;
     const distanceY = e.clientY - centerY;
-    
+
     x.set(distanceX * 0.3);
     y.set(distanceY * 0.3);
   };
-  
+
   const handleMouseLeave = () => {
     x.set(0);
     y.set(0);
   };
-  
+
   return (
     <motion.button
       ref={ref}
@@ -66,26 +66,26 @@ const MagneticButton: React.FC<MagneticButtonProps> = ({ children, onClick, clas
 const Hero: React.FC = () => {
   const { language } = useLanguage();
   const { openBooking } = useBooking();
-  
-  const titleLines = language === 'es' 
+
+  const titleLines = language === 'es'
     ? ['CONVERTIMOS', 'EXPERIENCIAS', 'DE MARCA EN', 'RESULTADOS']
     : ['WE TURN', 'BRAND', 'EXPERIENCES', 'INTO RESULTS'];
-  
-  const subtitle = language === 'es' 
+
+  const subtitle = language === 'es'
     ? 'Marketing deportivo basado en datos'
     : 'Data-driven sports marketing';
-  
+
   const ctaText = language === 'es' ? 'AGENDAR UNA CALL' : 'SCHEDULE A CALL';
-  
+
   const stats = [
     { icon: TrendingUp, value: '+340%', label: language === 'es' ? 'Engagement' : 'Engagement' },
     { icon: Target, value: '10+', label: language === 'es' ? 'Marcas' : 'Brands' },
     { icon: Zap, value: '7', label: language === 'es' ? 'Años' : 'Years' },
   ];
-  
+
   return (
-    <section 
-      id="hero" 
+    <section
+      id="hero"
       className="relative min-h-screen flex items-center overflow-hidden"
     >
       {/* Content Container - Left Aligned */}
@@ -105,12 +105,12 @@ const Hero: React.FC = () => {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="flex items-center gap-3 mb-6"
             >
-              <div className="w-12 h-[2px] bg-[#FF6F61]" />
-              <span className="font-lato text-sm tracking-[0.2em] text-[#FF6F61] uppercase">
+              <div className="w-12 h-[2px] bg-be-coral" />
+              <span className="font-lato text-sm tracking-[0.2em] text-be-coral uppercase">
                 {subtitle}
               </span>
             </motion.div>
-            
+
             {/* Main Title - Creative Stacked Layout */}
             <div className="mb-8">
               {titleLines.map((line, index) => (
@@ -124,9 +124,8 @@ const Hero: React.FC = () => {
                       damping: 20,
                       delay: 0.3 + index * 0.1
                     }}
-                    className={`font-poppins font-black leading-[0.95] tracking-tight text-white ${
-                      index === 0 ? 'text-[3.5rem] md:text-[5rem]' : 'text-[3rem] md:text-[4.5rem]'
-                    }`}
+                    className={`font-poppins font-black leading-[0.95] tracking-tight text-white ${index === 0 ? 'text-[3.5rem] md:text-[5rem]' : 'text-[3rem] md:text-[4.5rem]'
+                      }`}
                     style={{
                       textShadow: '0 4px 10px rgba(0, 0, 0, 0.5)',
                       WebkitTextStroke: index === 2 ? '2px rgba(255, 111, 97, 0.3)' : 'none',
@@ -138,19 +137,19 @@ const Hero: React.FC = () => {
                 </div>
               ))}
             </div>
-            
+
             {/* Description */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
-              className="font-lato text-lg text-[#D1D5DB] max-w-md mb-8"
+              className="font-lato text-lg text-be-gray max-w-md mb-8"
             >
-              {language === 'es' 
+              {language === 'es'
                 ? 'Transformamos tu marca deportiva con estrategias data-driven que generan resultados medibles y sostenibles.'
                 : 'We transform your sports brand with data-driven strategies that generate measurable and sustainable results.'}
             </motion.p>
-            
+
             {/* CTA Button */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -159,9 +158,9 @@ const Hero: React.FC = () => {
             >
               <MagneticButton
                 onClick={openBooking}
-                className="group relative px-8 py-4 bg-[#FF6F61] text-white font-poppins font-bold text-lg rounded-full overflow-hidden"
+                className="group relative px-8 py-4 bg-be-coral text-white font-poppins font-bold text-lg rounded-full overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-[#FF6F61] to-[#FF8A7A] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-be-coral to-be-coral-light opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span className="relative z-10 flex items-center gap-3">
                   {ctaText}
                   <motion.span
@@ -171,14 +170,14 @@ const Hero: React.FC = () => {
                     <ArrowRight size={20} />
                   </motion.span>
                 </span>
-                <div 
+                <div
                   className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"
                   style={{ boxShadow: '0 0 40px rgba(255, 111, 97, 0.6)' }}
                 />
               </MagneticButton>
             </motion.div>
           </motion.div>
-          
+
           {/* Right Column - Stats */}
           <motion.div
             className="hidden lg:flex flex-col gap-6"
@@ -195,21 +194,21 @@ const Hero: React.FC = () => {
                 transition={{ delay: 0.9 + index * 0.15, duration: 0.6 }}
                 whileHover={{ scale: 1.02, borderColor: 'rgba(255, 111, 97, 0.3)' }}
               >
-                <div className="w-14 h-14 rounded-xl bg-[#FF6F61]/20 flex items-center justify-center">
-                  <stat.icon size={28} className="text-[#FF6F61]" />
+                <div className="w-14 h-14 rounded-xl bg-be-coral/20 flex items-center justify-center">
+                  <stat.icon size={28} className="text-be-coral" />
                 </div>
                 <div>
                   <span className="font-poppins font-black text-4xl text-white">{stat.value}</span>
-                  <p className="font-lato text-sm text-[#D1D5DB]">{stat.label}</p>
+                  <p className="font-lato text-sm text-be-gray">{stat.label}</p>
                 </div>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </div>
-      
+
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#1F2937] to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-be-deep-blue to-transparent pointer-events-none" />
     </section>
   );
 };

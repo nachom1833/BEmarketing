@@ -40,12 +40,12 @@ module.exports = {
         },
         // BE Marketing Custom Colors
         be: {
-          'deep-blue': '#1F2937',
-          'midnight': '#2C3E50',
-          'coral': '#FF6F61',
-          'coral-light': '#FF8A7A',
-          'white': '#FFFFFF',
-          'gray': '#D1D5DB',
+          'deep-blue': 'hsl(var(--be-deep-blue))',
+          'midnight': 'hsl(var(--be-midnight))',
+          'coral': 'hsl(var(--be-coral))',
+          'coral-light': '#FF8A7A', // Keep as hex if no var exists or create one
+          'white': 'hsl(var(--be-white))',
+          'gray': 'hsl(var(--be-gray))',
         },
       },
       fontFamily: {

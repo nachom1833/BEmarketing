@@ -1,0 +1,14 @@
+.cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--brand-core);
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+
+    /* Initial hidden state off-screen is improved effectively by negative coordinates */
+}

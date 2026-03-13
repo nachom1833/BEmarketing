@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap');
+
+.methodSection {
+    position: relative;
+    background-color: transparent;
+    /* Wind tunnel clear */
+    color: white;
+    padding: 12rem 0;
+    overflow: hidden;
+    perspective: 1000px;
+    /* Essential for 3D tilt */
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.header {
+    margin-bottom: 8rem;
+    text-align: left;
+    padding-left: 2rem;
+    /* Mobile alignment */
+    position: relative;
+    z-index: 5;
+
+    @media (min-width: 768px) {
+        padding-left: 4rem;
+    }
+}
+
+.sectionTitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    margin: 0;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+    @media (min-width: 768px) {
+        font-size: 6rem;
+    }
+}
+
+.stepsWrapper {
+    position: relative;
+    padding-left: 1rem;
+
+    @media (min-width: 768px) {
+        padding-left: 6rem;
+    }
+}
+
+/* The Luminous Thread System */
+.connectorLineWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    /* Thinner guide rail */
+    height: 100%;
+    /* Static Rail */
+    background: rgba(255, 255, 255, 0.05);
+    /* Subtle guide */
+    overflow: hidden;
+    border-radius: 4px;
+
+    @media (min-width: 768px) {
+        left: 2rem;
+    }
+}
+
+/* The Glowing Fill */
+.luminousThread {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom,
+            #FF6F61,
+            rgba(255, 111, 97, 0.2));
+    /* Coral Energy */
+    box-shadow: 0 0 15px rgba(255, 111, 97, 0.6);
+    /* Vibrant Glow */
+    position: absolute;
+    top: 0;
+    left: 0;
+    will-change: transform;
+}
+
+.stepsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 12rem;
+    /* Huge gaps for scrollytelling feel */
+}
+
+/* The Card Structure with Rail & Node */
+.stepCard {
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+    padding: 3rem 2rem;
+    border-radius: 24px;
+
+    /* Glassmorphism - High Contrast Dark */
+    background: rgba(31, 41, 55, 0.75);
+    /* Dark Heavy tint for readability */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: visible;
+    /* Allow number to bleed out */
+
+    transform-style: preserve-3d;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Active State Logic */
+    /* Handled via Framer Motion variants in js, but fallback here */
+    &.active {
+        border-color: rgba(255, 111, 97, 0.5);
+        box-shadow:
+            0 30px 60px -12px rgba(0, 0, 0, 0.6),
+            0 0 30px rgba(255, 111, 97, 0.2);
+    }
+
+    &:hover {
+        border-color: rgba(255, 111, 97, 0.3);
+        box-shadow:
+            0 30px 60px -12px rgba(0, 0, 0, 0.6),
+            0 0 20px rgba(255, 111, 97, 0.1);
+    }
+
+    @media (min-width: 768px) {
+        padding: 5rem 4rem;
+        margin-left: 4rem;
+    }
+}
+
+/* The Connector Node */
+.timelineNode {
+    position: absolute;
+    left: -2.85rem;
+    /* Mobile alignment */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    z-index: 10;
+    transition: all 0.5s ease;
+
+    @media (min-width: 768px) {
+        /* Desktop alignment: Card Margin 4rem + Thread Wrapper diff */
+        /* See previous logic: approx -8rem relative to card content box if margin is applied */
+        /* BUT stepCard uses margin-left: 4rem; so relative to its border-box: */
+        left: -4.15rem;
+        /* 
+           Thread is at 2rem from stepsWrapper left.
+           Card is at 4rem margin-left relative to stepsWrapper -> 6rem total offset? 
+           Wait, stepsWrapper padding-left is 6rem.
+           Thread wrapper is at left: 2rem.
+           Difference: 4rem.
+           Card margin-left: 4rem?
+        */
+        left: -8.1rem;
+    }
+}
+
+.stepNumber {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10rem;
+    font-weight: 900;
+    line-height: 1;
+    position: absolute;
+    right: 1rem;
+    bottom: -4rem;
+    z-index: -1;
+    /* Behind the glass */
+
+    /* Outline Style */
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.08);
+    opacity: 0.6;
+    pointer-events: none;
+    filter: blur(1px);
+
+    @media (min-width: 768px) {
+        font-size: 16rem;
+        right: -2rem;
+        bottom: -6rem;
+    }
+}
+
+.cardContent {
+    position: relative;
+    z-index: 2;
+}
+
+.stepTitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+
+    @media (min-width: 768px) {
+        font-size: 3.5rem;
+    }
+}
+
+.stepDesc {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 650px;
+    line-height: 1.7;
+    font-weight: 300;
+
+    @media (min-width: 768px) {
+        font-size: 1.5rem;
+    }
+}

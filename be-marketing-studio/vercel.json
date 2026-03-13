@@ -1,0 +1,6 @@
+{
+  "installCommand": "rm -rf node_modules && npm install --legacy-peer-deps",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

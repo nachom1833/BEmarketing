@@ -7,8 +7,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const STATS_DATA = [
-  { value:80, suffix:'+', labelES:'Proyectos ejecutados', labelEN:'Projects executed', descES:'con impacto medible', descEN:'with measurable impact' },
-  { value:5,  suffix:'+', labelES:'Años de experiencia',  labelEN:'Years of experience', descES:'en mercados globales', descEN:'in global markets' },
+  { value:100, suffix:'+', labelES:'Proyectos ejecutados', labelEN:'Projects executed', descES:'con impacto medible', descEN:'with measurable impact' },
+  { value:10,  suffix:'+', labelES:'Años de experiencia',  labelEN:'Years of experience', descES:'en mercados globales', descEN:'in global markets' },
   { value:3,  suffix:'',  labelES:'Continentes',           labelEN:'Continents', descES:'de alcance internacional', descEN:'of international reach' },
   { value:98, suffix:'%', labelES:'Satisfacción',           labelEN:'Satisfaction', descES:'de clientes recurrentes', descEN:'of returning clients' },
 ]

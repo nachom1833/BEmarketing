@@ -108,9 +108,6 @@ export default function BEMethod() {
           el.style.color = w.fill
           el.style.WebkitTextStroke = w.strokeW ? `${w.strokeW} ${w.stroke}` : '0px transparent'
           el.style.textShadow = w.shadow
-          el.style.fontSize = w.word.length > 9
-            ? 'clamp(2.8rem,9vw,9rem)'
-            : 'clamp(5rem,16vw,15rem)'
           el.textContent = w.word
           // Snap to bottom off-screen, then enter
           gsap.set(el, { yPercent: 110, opacity: 0 })
@@ -170,7 +167,7 @@ export default function BEMethod() {
           {/* BE — siempre fijo */}
           <div style={{
             fontFamily:"'Montserrat',sans-serif", fontWeight:900,
-            fontSize:'clamp(5rem,16vw,15rem)',
+            fontSize:'clamp(3.5rem,12vw,12rem)',
             color:'#FFFFFF',
             letterSpacing:'-0.04em', lineHeight:.9,
           }}>
@@ -179,21 +176,19 @@ export default function BEMethod() {
 
           {/* Cycling word — fixed height container, slot machine */}
           <div style={{
-            height:'clamp(5rem,16vw,15rem)',
+            height:'clamp(3.5rem,12vw,12rem)',
             overflow:'hidden',
             lineHeight:.9,
-            marginTop:'clamp(.5rem,1vw,.8rem)',
+            marginTop:'clamp(.3rem,.8vw,.6rem)',
           }}>
             <div
               ref={wordRef}
               style={{
                 fontFamily:"'Montserrat',sans-serif", fontWeight:900,
-                /* Auto-shrink for long words like DATA-DRIVEN, UNSTOPPABLE */
-                fontSize: current.word.length > 9
-                  ? 'clamp(2.8rem,9vw,9rem)'
-                  : 'clamp(5rem,16vw,15rem)',
+                fontSize:'clamp(2.2rem,9vw,10rem)',
                 letterSpacing:'-0.04em', lineHeight:.9,
                 display:'block',
+                whiteSpace:'nowrap',
                 WebkitTextStroke: current.strokeW
                   ? `${current.strokeW} ${current.stroke}`
                   : `0px transparent`,

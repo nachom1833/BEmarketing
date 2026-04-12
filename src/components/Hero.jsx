@@ -152,8 +152,8 @@ export default function Hero() {
               paddingTop:'clamp(1.2rem,2vw,1.8rem)',
               borderTop:'1px solid rgba(255,255,255,.07)' }}>
               {[
-                { n:'+80', k:'hero_stat1' },
-                { n:'+5',  k:'hero_stat2' },
+                { n:'+100', k:'hero_stat1' },
+                { n:'+10',  k:'hero_stat2' },
                 { n:'3',   k:'hero_stat3' },
               ].map(s => (
                 <div key={s.k}>

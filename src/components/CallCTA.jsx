@@ -93,12 +93,12 @@ export default function CallCTA() {
               style={{ ...M, display:'inline-flex', alignItems:'center', gap:'.7rem',
                 fontWeight:700, fontSize:'.75rem', letterSpacing:'.18em',
                 textTransform:'uppercase', color:'#1A1A1A',
-                background:VIZON, borderRadius:'100px',
+                background:'#FF6F61', borderRadius:'100px',
                 padding:'.9rem 2.5rem', textDecoration:'none', cursor:'none',
-                boxShadow:`0 0 40px rgba(201,185,154,.25)`,
+                boxShadow:`0 0 40px rgba(255,111,97,.25)`,
                 transition:'background .25s, transform .2s' }}
-              onMouseEnter={e=>{ e.currentTarget.style.background='#E8DDD1'; e.currentTarget.style.transform='scale(1.05) translateY(-2px)' }}
-              onMouseLeave={e=>{ e.currentTarget.style.background=VIZON; e.currentTarget.style.transform='scale(1)' }}>
+              onMouseEnter={e=>{ e.currentTarget.style.background='#FF8A7E'; e.currentTarget.style.transform='scale(1.05) translateY(-2px)' }}
+              onMouseLeave={e=>{ e.currentTarget.style.background='#FF6F61'; e.currentTarget.style.transform='scale(1)' }}>
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                 <rect x="2" y="3" width="14" height="13" rx="2" stroke="#1A1A1A" strokeWidth="1.5"/>
                 <path d="M6 1v3M12 1v3M2 7h14" stroke="#1A1A1A" strokeWidth="1.5" strokeLinecap="round"/>

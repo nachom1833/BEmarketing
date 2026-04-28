@@ -121,12 +121,12 @@ export default function About() {
               style={{ ...M, display:'inline-flex', alignItems:'center', gap:'.6rem',
                 fontWeight:700, fontSize:'.72rem', letterSpacing:'.18em',
                 textTransform:'uppercase', color:'#1A1A1A',
-                background:VIZON, borderRadius:'100px',
+                background:'#FF6F61', borderRadius:'100px',
                 padding:'.75rem 2rem', textDecoration:'none', cursor:'none',
                 transition:'background .25s, transform .2s',
-                boxShadow:`0 0 28px rgba(201,185,154,.2)` }}
-              onMouseEnter={e=>{ e.currentTarget.style.background='#E8DDD1'; e.currentTarget.style.transform='scale(1.04)' }}
-              onMouseLeave={e=>{ e.currentTarget.style.background=VIZON; e.currentTarget.style.transform='scale(1)' }}>
+                boxShadow:`0 0 28px rgba(255,111,97,.2)` }}
+              onMouseEnter={e=>{ e.currentTarget.style.background='#FF8A7E'; e.currentTarget.style.transform='scale(1.04)' }}
+              onMouseLeave={e=>{ e.currentTarget.style.background='#FF6F61'; e.currentTarget.style.transform='scale(1)' }}>
               {tx('about_cta', lang)}
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path d="M2 7h10M7 3l4 4-4 4" stroke="#1A1A1A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

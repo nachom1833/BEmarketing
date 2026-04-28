@@ -29,7 +29,7 @@ export default function Services() {
 
   const services = [
     { number:'01', titleKey:'svc1_title', subKey:'svc1_sub', descKey:'svc1_desc',
-      tags:['svc1_t1','svc1_t2','svc1_t3'], bg:'#0e1018', accentColor:'#FF6F61',
+      tags:['svc1_t1','svc1_t2','svc1_t3'], bg:'#0e1018', accentColor:'#C9B99A',
       image:'/images/retail-sports.png', imageCycle:null },
     { number:'02', titleKey:'svc2_title', subKey:'svc2_sub', descKey:'svc2_desc',
       tags:['svc2_t1','svc2_t2','svc2_t3'], bg:'#0c1410', accentColor:'#C9B99A',
@@ -222,12 +222,12 @@ export default function Services() {
             target="_blank" rel="noopener noreferrer"
             style={{ ...M, display:'inline-flex', alignItems:'center', gap:'.5rem',
               fontWeight:700, fontSize:'.7rem', letterSpacing:'.18em',
-              textTransform:'uppercase', color:'#1A1A1A', background:'#C9B99A',
+              textTransform:'uppercase', color:'#1A1A1A', background:'#FF6F61',
               borderRadius:'100px', padding:'.6rem 1.6rem', textDecoration:'none',
-              cursor:'none', boxShadow:'0 0 20px rgba(201,185,154,.2)',
+              cursor:'none', boxShadow:'0 0 20px rgba(255,111,97,.2)',
               transition:'background .25s, transform .2s' }}
-            onMouseEnter={e=>{ e.currentTarget.style.background='#E8DDD1'; e.currentTarget.style.transform='scale(1.04)' }}
-            onMouseLeave={e=>{ e.currentTarget.style.background='#C9B99A'; e.currentTarget.style.transform='scale(1)' }}>
+            onMouseEnter={e=>{ e.currentTarget.style.background='#FF8A7E'; e.currentTarget.style.transform='scale(1.04)' }}
+            onMouseLeave={e=>{ e.currentTarget.style.background='#FF6F61'; e.currentTarget.style.transform='scale(1)' }}>
             {tx('svc_cta', lang)}
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
               <path d="M2 6h8M6 3l3 3-3 3" stroke="#1A1A1A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

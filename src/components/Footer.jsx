@@ -7,10 +7,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const SOCIAL = [
-  { label: 'Instagram', href: '#' },
-  { label: 'LinkedIn',  href: '#' },
-  { label: 'Facebook',  href: '#' },
-  { label: 'Behance',   href: '#' },
+  { label: 'Instagram', href: 'https://www.instagram.com/bemarketingstudio/' },
+  { label: 'LinkedIn',  href: 'https://www.linkedin.com/in/antonellarosa1/' }
 ]
 
 const LEGAL = [
@@ -267,13 +265,13 @@ export default function Footer() {
             target="_blank" rel="noopener noreferrer"
             style={{ ...M, display:'inline-flex', alignItems:'center', gap:'.5rem',
               fontWeight:700, fontSize:'.7rem', letterSpacing:'.18em',
-              textTransform:'uppercase', color:'#1A1A1A', background:VIZON,
+              textTransform:'uppercase', color:'#1A1A1A', background:'#FF6F61',
               borderRadius:'100px', padding:'.65rem 1.6rem',
               textDecoration:'none', cursor:'none',
               transition:'background .25s, transform .2s',
-              boxShadow:`0 0 24px rgba(201,185,154,.2)` }}
-            onMouseEnter={e=>{e.currentTarget.style.background='#E8DDD1';e.currentTarget.style.transform='scale(1.04)'}}
-            onMouseLeave={e=>{e.currentTarget.style.background=VIZON;e.currentTarget.style.transform='scale(1)'}}>
+              boxShadow:`0 0 24px rgba(255,111,97,.2)` }}
+            onMouseEnter={e=>{e.currentTarget.style.background='#FF8A7E';e.currentTarget.style.transform='scale(1.04)'}}
+            onMouseLeave={e=>{e.currentTarget.style.background='#FF6F61';e.currentTarget.style.transform='scale(1)'}}>
             {tx('footer_cta', lang)}
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
               <path d="M1.5 10.5L10.5 1.5M10.5 1.5H4.5M10.5 1.5V7.5" stroke="#1A1A1A" strokeWidth="1.5" strokeLinecap="round"/>

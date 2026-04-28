@@ -122,12 +122,12 @@ export default function Hero() {
                 style={{ ...M, display:'inline-flex', alignItems:'center', gap:'.6rem',
                   fontWeight:700, fontSize:'.72rem', letterSpacing:'.18em',
                   textTransform:'uppercase', color:'#1A1A1A',
-                  background:'#C9B99A', borderRadius:'100px',
+                  background:'#FF6F61', borderRadius:'100px',
                   padding:'.8rem 2rem', textDecoration:'none', cursor:'none',
                   transition:'background .25s, transform .2s, box-shadow .25s',
-                  boxShadow:'0 0 28px rgba(201,185,154,.25)' }}
-                onMouseEnter={e=>{ e.currentTarget.style.background='#E8DDD1'; e.currentTarget.style.transform='scale(1.05)' }}
-                onMouseLeave={e=>{ e.currentTarget.style.background='#C9B99A'; e.currentTarget.style.transform='scale(1)' }}>
+                  boxShadow:'0 0 28px rgba(255,111,97,.25)' }}
+                onMouseEnter={e=>{ e.currentTarget.style.background='#FF8A7E'; e.currentTarget.style.transform='scale(1.05)' }}
+                onMouseLeave={e=>{ e.currentTarget.style.background='#FF6F61'; e.currentTarget.style.transform='scale(1)' }}>
                 {tx('hero_cta', lang)}
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                   <path d="M2 7h10M7 3l4 4-4 4" stroke="#1A1A1A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -152,8 +152,8 @@ export default function Hero() {
               paddingTop:'clamp(1.2rem,2vw,1.8rem)',
               borderTop:'1px solid rgba(255,255,255,.07)' }}>
               {[
-                { n:'+100', k:'hero_stat1' },
-                { n:'+10',  k:'hero_stat2' },
+                { n:'+120', k:'hero_stat1' },
+                { n:'+11',  k:'hero_stat2' },
                 { n:'3',   k:'hero_stat3' },
               ].map(s => (
                 <div key={s.k}>

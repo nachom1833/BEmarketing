@@ -167,7 +167,7 @@ export default function BEMethod() {
           {/* BE — siempre fijo */}
           <div style={{
             fontFamily:"'Montserrat',sans-serif", fontWeight:900,
-            fontSize:'clamp(3.5rem,12vw,12rem)',
+            fontSize:'clamp(2.3rem,9.5vw,10.5rem)',
             color:'#FFFFFF',
             letterSpacing:'-0.04em', lineHeight:.9,
           }}>
@@ -176,7 +176,7 @@ export default function BEMethod() {
 
           {/* Cycling word — fixed height container, slot machine */}
           <div style={{
-            height:'clamp(3.5rem,12vw,12rem)',
+            height:'clamp(2.3rem,9.5vw,10.5rem)',
             overflow:'hidden',
             lineHeight:.9,
             marginTop:'clamp(.3rem,.8vw,.6rem)',
@@ -185,7 +185,7 @@ export default function BEMethod() {
               ref={wordRef}
               style={{
                 fontFamily:"'Montserrat',sans-serif", fontWeight:900,
-                fontSize:'clamp(2.2rem,9vw,10rem)',
+                fontSize:'clamp(2.3rem,9.5vw,10.5rem)',
                 letterSpacing:'-0.04em', lineHeight:.9,
                 display:'block',
                 whiteSpace:'nowrap',

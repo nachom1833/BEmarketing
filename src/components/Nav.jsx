@@ -123,7 +123,7 @@ export default function Nav() {
             {/* Divider */}
             <div style={{ width:'1px', height:'18px', background:'rgba(255,255,255,.12)' }} />
             {/* CTA */}
-            <a href="https://calendly.com/be-marketing-studio/30min"
+            <a href="https://calendly.com/bemarketingstudio"
               target="_blank" rel="noopener noreferrer"
               style={{ cursor:'none', textDecoration:'none',
                 fontFamily:"'Montserrat',sans-serif", fontWeight:600,
@@ -175,7 +175,7 @@ export default function Nav() {
               </a>
             ))}
             <div style={{ display:'flex', gap:'1rem', marginTop:'.5rem' }}>
-              <a href="https://calendly.com/be-marketing-studio/30min"
+              <a href="https://calendly.com/bemarketingstudio"
                 target="_blank" rel="noopener noreferrer"
                 style={{ fontFamily:"'Montserrat',sans-serif", fontWeight:700, fontSize:'.8rem',
                   color:'#1A1A1A', background:'#FF6F61', borderRadius:'100px',

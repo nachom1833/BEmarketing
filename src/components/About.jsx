@@ -116,7 +116,7 @@ export default function About() {
               {tx('about_p2', lang)}
             </p>
 
-            <a href="https://calendly.com/be-marketing-studio/30min"
+            <a href="https://calendly.com/bemarketingstudio"
               target="_blank" rel="noopener noreferrer"
               style={{ ...M, display:'inline-flex', alignItems:'center', gap:'.6rem',
                 fontWeight:700, fontSize:'.72rem', letterSpacing:'.18em',

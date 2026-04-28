@@ -15,6 +15,7 @@ import Stats from './components/Stats'
 import About from './components/About'
 import CallCTA from './components/CallCTA'
 import Footer from './components/Footer'
+import WhatsAppButton from './components/WhatsAppButton'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -78,6 +79,7 @@ export default function App() {
         </main>
         <Footer />
       </div>
+      <WhatsAppButton />
     </>
     </LangProvider>
   )

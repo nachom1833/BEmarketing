@@ -177,7 +177,6 @@ export default function BEMethod() {
           {/* Cycling word — fixed height container, slot machine */}
           <div style={{
             height:'clamp(2.3rem,9.5vw,10.5rem)',
-            overflow:'hidden',
             lineHeight:.9,
             marginTop:'clamp(.3rem,.8vw,.6rem)',
           }}>

@@ -218,7 +218,7 @@ export default function Services() {
             color:'rgba(255,255,255,.3)' }}>
             {tx('svc_bottom', lang)}
           </p>
-          <a href="https://calendly.com/be-marketing-studio/30min"
+          <a href="https://calendly.com/bemarketingstudio"
             target="_blank" rel="noopener noreferrer"
             style={{ ...M, display:'inline-flex', alignItems:'center', gap:'.5rem',
               fontWeight:700, fontSize:'.7rem', letterSpacing:'.18em',

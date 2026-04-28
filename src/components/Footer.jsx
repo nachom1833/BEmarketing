@@ -8,7 +8,9 @@ gsap.registerPlugin(ScrollTrigger)
 
 const SOCIAL = [
   { label: 'Instagram', href: 'https://www.instagram.com/bemarketingstudio/' },
-  { label: 'LinkedIn',  href: 'https://www.linkedin.com/in/antonellarosa1/' }
+  { label: 'LinkedIn',  href: 'https://www.linkedin.com/in/antonellarosa1/' },
+  { label: 'WhatsApp',  href: 'https://wa.me/+5491167852489' },
+  { label: 'Gmail', href: 'mailto:arosa@bemarketingstudio.com' },
 ]
 
 const LEGAL = [
@@ -112,21 +114,21 @@ export default function Footer() {
       <div style={{ height:'1px', background:`linear-gradient(90deg,transparent,${VIZON},transparent)` }} />
 
       {/* ═══ MONUMENTAL TYPE ═══ */}
-      <div style={{ padding:'clamp(4rem,7vw,7rem) clamp(1.5rem,4vw,5rem) 0', overflow:'hidden' }}>
+      <div style={{ padding:'clamp(3rem,7vw,7rem) clamp(1rem,4vw,5rem) 0', overflow:'hidden' }}>
         <div ref={wordRef} style={{ lineHeight:.88 }}>
           <h2 style={{ ...M, fontWeight:900,
-            fontSize:'clamp(4rem,13vw,14rem)', color:'#FFFFFF',
+            fontSize:'clamp(2rem,11vw,14rem)', color:'#FFFFFF',
             letterSpacing:'-0.04em', lineHeight:.88, margin:0,
             textTransform:'uppercase' }}>
             BE MARKETING
           </h2>
           <h2 style={{ ...M, fontWeight:900,
-            fontSize:'clamp(4rem,13vw,14rem)',
+            fontSize:'clamp(2rem,11vw,14rem)',
             WebkitTextStroke:'1.5px rgba(255,255,255,.15)',
             WebkitTextFillColor:'transparent',
             letterSpacing:'-0.04em', lineHeight:.88, margin:0,
             textTransform:'uppercase',
-            paddingLeft:'clamp(3rem,8vw,10rem)',
+            paddingLeft:'clamp(1rem,5vw,10rem)',
           }}>
             STUDIO
           </h2>
@@ -261,7 +263,7 @@ export default function Footer() {
           </p>
 
           {/* CTA */}
-          <a href="https://calendly.com/be-marketing-studio/30min"
+          <a href="https://calendly.com/bemarketingstudio"
             target="_blank" rel="noopener noreferrer"
             style={{ ...M, display:'inline-flex', alignItems:'center', gap:'.5rem',
               fontWeight:700, fontSize:'.7rem', letterSpacing:'.18em',

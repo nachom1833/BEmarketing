@@ -117,7 +117,7 @@ export default function Hero() {
             </p>
 
             <div ref={ctaRef} style={{ opacity:0, display:'flex', flexWrap:'wrap', gap:'1rem' }}>
-              <a href="https://calendly.com/be-marketing-studio/30min"
+              <a href="https://calendly.com/bemarketingstudio"
                 target="_blank" rel="noopener noreferrer"
                 style={{ ...M, display:'inline-flex', alignItems:'center', gap:'.6rem',
                   fontWeight:700, fontSize:'.72rem', letterSpacing:'.18em',
